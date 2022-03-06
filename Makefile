@@ -1,7 +1,7 @@
 CXX = g++
-CXXFLAGS = -Wall -Wextra -Werror -g
+CXXFLAGS = -Wall -Wextra -Werror
 
-hinfosvc: hinfo.o HTTPServer.o Request.o Response.o SysInfo.o
+hinfosvc: main.o HTTPServer.o Request.o Response.o SysInfo.o
 	$(CXX) $(CXXFLAGS) -o $@ $^	
 
 run: hinfosvc
