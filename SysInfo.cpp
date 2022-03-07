@@ -69,7 +69,7 @@ CpuStats SysInfo::getCpuStats()
 {
 	std::ifstream fileStream(CPU_STATS_FILE_NAME);
 
-	std::regex rgx("cpu[\\s+](.+)\\s(.+)\\s(.+)\\s(.+)\\s(.+)\\s(.+)\\s(.+)\\s(.+)\\s(.+)\\s(.+)");
+	std::regex rgx("cpu\\s*(\\d*)\\s(\\d*)\\s(\\d*)\\s(\\d*)\\s(\\d*)\\s(\\d*)\\s(\\d*)\\s(\\d*)\\s(\\d*)\\s(\\d*)");
 	std::smatch match;
 
 	CpuStats cpuStats;
@@ -81,14 +81,14 @@ CpuStats SysInfo::getCpuStats()
 		{
 			if (std::regex_search(line, match, rgx))
 			{
-				cpuStats.user = stoi(match[1]);
-				cpuStats.nice = stoi(match[2]);
-				cpuStats.system = stoi(match[3]);
-				cpuStats.idle = stoi(match[4]);
-				cpuStats.iowait = stoi(match[5]);
-				cpuStats.irq = stoi(match[6]);
-				cpuStats.softirq = stoi(match[7]);
-				cpuStats.steal = stoi(match[8]);
+				cpuStats.user = stol(match[1]);
+				cpuStats.nice = stol(match[2]);
+				cpuStats.system = stol(match[3]);
+				cpuStats.idle = stol(match[4]);
+				cpuStats.iowait = stol(match[5]);
+				cpuStats.irq = stol(match[6]);
+				cpuStats.softirq = stol(match[7]);
+				cpuStats.steal = stol(match[8]);
 				break;
 			}
 		}

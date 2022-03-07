@@ -6,14 +6,14 @@
 
 typedef struct
 {
-	int user;
-	int nice;
-	int system;
-	int idle;
-	int iowait;
-	int irq;
-	int softirq;
-	int steal;
+	long user;
+	long nice;
+	long system;
+	long idle;
+	long iowait;
+	long irq;
+	long softirq;
+	long steal;
 } CpuStats;
 
 class SysInfo
