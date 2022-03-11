@@ -35,7 +35,11 @@ std::string SysInfo::getHostname()
 {
 	std::ifstream hostnameFile(HOSTNAME_FILE_NAME);
 	std::string hostname;
-	getline(hostnameFile, hostname);
+
+	if (hostnameFile.is_open())
+	{
+		getline(hostnameFile, hostname);
+	}
 
 	hostnameFile.close();
 

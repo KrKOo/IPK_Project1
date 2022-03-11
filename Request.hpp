@@ -23,6 +23,6 @@ private:
 
 public:
 	Request(std::string body);
-	std::string getPath();
+	std::string getRoute();
 	HTTPMethod getMethod();
 };

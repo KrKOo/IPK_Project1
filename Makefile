@@ -1,11 +1,13 @@
 CXX = g++
 CXXFLAGS = -Wall -Wextra -Werror
+# Default port
+PORT = 12345
 
 hinfosvc: main.o HTTPServer.o Request.o Response.o SysInfo.o
-	$(CXX) $(CXXFLAGS) -o $@ $^	
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
 run: hinfosvc
-	./hinfosvc 12345
+	./hinfosvc $(PORT)
 
 .PHONY: clean
 clean:

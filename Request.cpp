@@ -6,7 +6,7 @@ Request::Request(std::string body)
     parseRequest();
 }
 
-std::string Request::getPath()
+std::string Request::getRoute()
 {
     return this->route;
 }

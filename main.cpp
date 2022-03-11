@@ -26,11 +26,9 @@ Response getLoadResponse()
 
 int main(int argc, char **argv)
 {
-    (void)argc;
-    (void)argv;
     if (argc != 2)
     {
-        std::cerr << "Port not defined." << std::endl;
+        std::cerr << "Invalid argument count." << std::endl;
         exit(EXIT_FAILURE);
     }
 

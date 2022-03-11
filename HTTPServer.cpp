@@ -25,7 +25,7 @@ void HTTPServer::serve()
     {
         Request request = readRequest(socket);
 
-        Response response = getResponseByRoute(request.getPath(), request.getMethod());
+        Response response = getResponseByRoute(request.getRoute(), request.getMethod());
 
         sendResponse(socket, response);
 
